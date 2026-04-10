@@ -251,6 +251,57 @@ body {
   background: #e8f3fd;
 }
 
+.pill.status-blocked {
+  border-color: #efb3b3;
+  color: #aa3c3c;
+  background: #fdf1f1;
+}
+
+.pill.status-done {
+  border-color: #9cd9b0;
+  color: #2f9e56;
+  background: #ecf8f0;
+}
+
+.status-select-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-select {
+  min-width: 130px;
+}
+
+.status-select:focus-visible,
+button:focus-visible {
+  outline: 2px solid #0e6da8;
+  outline-offset: 2px;
+}
+
+.status-alert {
+  margin-bottom: 12px;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.status-alert-success {
+  border-color: #96d1ab;
+  background: #edf8f1;
+  color: #246f3d;
+}
+
+.status-alert-error {
+  border-color: #efb3b3;
+  background: #fff2f2;
+  color: #8f2f2f;
+}
+
 .primary-button {
   border: 0;
   border-radius: 4px;

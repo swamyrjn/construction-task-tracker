@@ -1,6 +1,28 @@
-import { tasks } from '../data/mockData';
+import { STATUS_OPTIONS } from '../services/taskService';
+import type { Status, Task } from '../types';
 
-export function TaskTrackerPage() {
+type TaskTrackerPageProps = {
+  tasks: Task[];
+  onStatusChange: (taskId: number, nextStatus: Status) => void;
+};
+
+function statusClass(status: Status): string {
+  if (status === 'In Progress') {
+    return 'status-progress';
+  }
+
+  if (status === 'Blocked') {
+    return 'status-blocked';
+  }
+
+  if (status === 'Done') {
+    return 'status-done';
+  }
+
+  return 'status-todo';
+}
+
+export function TaskTrackerPage({ tasks, onStatusChange }: TaskTrackerPageProps) {
   return (
     <div>
       <header className="page-header page-header-row">
@@ -44,9 +66,21 @@ export function TaskTrackerPage() {
               <span className={`pill ${task.priority.toLowerCase()}`}>{task.priority}</span>
             </div>
             <div>
-              <span className={`pill status ${task.status === 'In Progress' ? 'status-progress' : 'status-todo'}`}>
-                {task.status}
-              </span>
+              <label className="status-select-wrap">
+                <span className={`pill status ${statusClass(task.status)}`}>{task.status}</span>
+                <select
+                  className="status-select"
+                  aria-label={`Status for ${task.name}`}
+                  value={task.status}
+                  onChange={(event) => onStatusChange(task.id, event.target.value as Status)}
+                >
+                  {STATUS_OPTIONS.map((statusOption) => (
+                    <option key={statusOption} value={statusOption}>
+                      {statusOption}
+                    </option>
+                  ))}
+                </select>
+              </label>
             </div>
             <div className="assignee-cell">
               <span className="avatar">{task.assignee.initials}</span>
