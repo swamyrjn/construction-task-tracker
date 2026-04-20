@@ -1,4 +1,4 @@
-import { tasks } from '../data/mockData';
+import { useTaskStore } from '../state/TaskContext';
 
 function DashboardMetric({ value, label, tone }: { value: number; label: string; tone: string }) {
   return (
@@ -11,10 +11,12 @@ function DashboardMetric({ value, label, tone }: { value: number; label: string;
 }
 
 export function DashboardPage() {
-  const total = 10;
-  const inProgress = 4;
-  const completed = 2;
-  const highPriority = 5;
+  const { tasks } = useTaskStore();
+
+  const total = tasks.length;
+  const inProgress = tasks.filter((t) => t.status === 'In Progress').length;
+  const done = tasks.filter((t) => t.status === 'Done').length;
+  const highPriority = tasks.filter((t) => t.priority === 'High').length;
 
   return (
     <div>
@@ -26,7 +28,7 @@ export function DashboardPage() {
       <section className="metrics-grid">
         <DashboardMetric value={total} label="Total Tasks" tone="blue" />
         <DashboardMetric value={inProgress} label="In Progress" tone="blue" />
-        <DashboardMetric value={completed} label="Completed" tone="green" />
+        <DashboardMetric value={done} label="Done" tone="green" />
         <DashboardMetric value={highPriority} label="High Priority" tone="red" />
       </section>
 

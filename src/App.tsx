@@ -4,22 +4,25 @@ import { DashboardPage } from './pages/DashboardPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { TaskTrackerPage } from './pages/TaskTrackerPage';
 import { TeamPage } from './pages/TeamPage';
-
-const pageMap: Record<NavKey, JSX.Element> = {
-  dashboard: <DashboardPage />,
-  tasks: <TaskTrackerPage />,
-  team: <TeamPage />,
-  settings: <SettingsPage />
-};
+import { TaskProvider } from './state/TaskContext';
 
 function App() {
   const [page, setPage] = useState<NavKey>('dashboard');
 
+  const pageMap: Record<NavKey, JSX.Element> = {
+    dashboard: <DashboardPage />,
+    tasks: <TaskTrackerPage />,
+    team: <TeamPage />,
+    settings: <SettingsPage />
+  };
+
   return (
-    <div className="app-shell">
-      <Sidebar current={page} onSelect={setPage} />
-      <main className="content">{pageMap[page]}</main>
-    </div>
+    <TaskProvider>
+      <div className="app-shell">
+        <Sidebar current={page} onSelect={setPage} />
+        <main className="content">{pageMap[page]}</main>
+      </div>
+    </TaskProvider>
   );
 }
 

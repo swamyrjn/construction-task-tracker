@@ -251,6 +251,106 @@ body {
   background: #e8f3fd;
 }
 
+.pill.status-blocked {
+  border-color: #f4a26a;
+  color: #b85c0f;
+  background: #fff3ea;
+}
+
+.pill.status-done {
+  border-color: #7dd0a0;
+  color: #2f9e56;
+  background: #f1faf4;
+}
+
+/* ── Styled status select ─────────────────────────────────── */
+.status-select {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 4px 28px 4px 12px;
+  border: 1px solid;
+  cursor: pointer;
+  min-width: 120px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236b7583' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.status-select:focus {
+  outline: 2px solid #0e6da8;
+  outline-offset: 2px;
+}
+
+.status-select--todo {
+  color: #4c5766;
+  border-color: #c8d2de;
+  background-color: #eef2f7;
+}
+
+.status-select--in-progress {
+  color: #0f6fb7;
+  border-color: #9ec8ef;
+  background-color: #e8f3fd;
+}
+
+.status-select--blocked {
+  color: #b85c0f;
+  border-color: #f4a26a;
+  background-color: #fff3ea;
+}
+
+.status-select--done {
+  color: #2f9e56;
+  border-color: #7dd0a0;
+  background-color: #f1faf4;
+}
+
+.pill.status-blocked {
+  border-color: #f4a46a;
+  color: #b75a0f;
+  background: #fff1e6;
+}
+
+.pill.status-done {
+  border-color: #7dd0a0;
+  color: #2f9e56;
+  background: #f1faf4;
+}
+
+.notification {
+  margin: 12px 0;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.notification-success {
+  color: #1d6e3f;
+  background: #f0faf4;
+  border-color: #7dd0a0;
+}
+
+.notification-error {
+  color: #b02020;
+  background: #fff6f6;
+  border-color: #ef8f8f;
+}
+
+.task-table-row .status-selector-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .primary-button {
   border: 0;
   border-radius: 4px;

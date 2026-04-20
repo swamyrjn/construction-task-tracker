@@ -1,6 +1,25 @@
-import { tasks } from '../data/mockData';
+import { useState } from 'react';
+import { Notification } from '../components/Notification';
+import { StatusSelector } from '../components/StatusSelector';
+import { useTaskStore } from '../state/TaskContext';
+import type { TaskStatus } from '../types';
+
+type NotificationState = { message: string; type: 'success' | 'error' } | null;
 
 export function TaskTrackerPage() {
+  const { tasks, updateTaskStatus } = useTaskStore();
+  const [notification, setNotification] = useState<NotificationState>(null);
+
+  const handleStatusChange = async (taskId: number, status: TaskStatus) => {
+    try {
+      await updateTaskStatus(taskId, status);
+      setNotification({ message: 'Task status updated successfully.', type: 'success' });
+    } catch {
+      setNotification({ message: 'Failed to update task status. Please try again.', type: 'error' });
+    }
+    setTimeout(() => setNotification(null), 3000);
+  };
+
   return (
     <div>
       <header className="page-header page-header-row">
@@ -10,6 +29,10 @@ export function TaskTrackerPage() {
         </div>
         <button className="primary-button">+ Create Task</button>
       </header>
+
+      {notification && (
+        <Notification message={notification.message} type={notification.type} />
+      )}
 
       <section className="filters-row">
         <input type="text" placeholder="Search tasks..." aria-label="Search tasks" />
@@ -44,9 +67,11 @@ export function TaskTrackerPage() {
               <span className={`pill ${task.priority.toLowerCase()}`}>{task.priority}</span>
             </div>
             <div>
-              <span className={`pill status ${task.status === 'In Progress' ? 'status-progress' : 'status-todo'}`}>
-                {task.status}
-              </span>
+              <StatusSelector
+                taskId={task.id}
+                value={task.status}
+                onChange={handleStatusChange}
+              />
             </div>
             <div className="assignee-cell">
               <span className="avatar">{task.assignee.initials}</span>

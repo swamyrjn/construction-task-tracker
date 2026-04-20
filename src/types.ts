@@ -1,5 +1,5 @@
 export type Priority = 'High' | 'Medium' | 'Low';
-export type Status = 'To Do' | 'In Progress' | 'Completed';
+export type TaskStatus = 'To Do' | 'In Progress' | 'Blocked' | 'Done';
 
 export type Task = {
   id: number;
@@ -8,7 +8,7 @@ export type Task = {
   location: string;
   dueDate: string;
   priority: Priority;
-  status: Status;
+  status: TaskStatus;
   assignee: {
     initials: string;
     name: string;

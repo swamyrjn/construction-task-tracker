@@ -18,7 +18,7 @@ export const tasks: Task[] = [
     location: 'Ground Floor, Block A',
     dueDate: 'Apr 10, 2026',
     priority: 'Medium',
-    status: 'To Do',
+    status: 'Blocked',
     assignee: { initials: 'MT', name: 'Michael Torres' }
   },
   {
@@ -28,7 +28,7 @@ export const tasks: Task[] = [
     location: 'Floor 1, Block A',
     dueDate: 'Apr 11, 2026',
     priority: 'High',
-    status: 'To Do',
+    status: 'Done',
     assignee: { initials: 'DK', name: 'David Kim' }
   },
   {
