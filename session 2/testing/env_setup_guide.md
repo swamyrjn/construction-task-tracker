@@ -8,11 +8,11 @@ Move files from `session 2/testing/resources/` into `.github/` with the same fil
 
 ## Source to Destination Map
 
-1. `session 2/testing/resources/instruction/unit-testing.instructions.md`
-   - Copy to: `.github/instruction/unit-testing.instructions.md`
+1. `session 2/testing/resources/instructions/unit-testing.instructions.md`
+   - Copy to: `.github/instructions/unit-testing.instructions.md`
 
-2. `session 2/testing/resources/instruction/e2e-testing.instructions.md`
-   - Copy to: `.github/instruction/e2e-testing.instructions.md`
+2. `session 2/testing/resources/instructions/e2e-testing.instructions.md`
+   - Copy to: `.github/instructions/e2e-testing.instructions.md`
 
 3. `session 2/testing/resources/prompts/write-unit-test.prompt.md`
    - Copy to: `.github/prompts/write-unit-test.prompt.md`
@@ -46,4 +46,4 @@ Move files from `session 2/testing/resources/` into `.github/` with the same fil
 
 - Keep file names exactly the same unless your team intentionally standardizes names.
 - If you rename a prompt file, also verify the frontmatter `name:` still matches the command you expect to run.
-- Keep instruction and skill content aligned with your repository's test stack and CI workflow.
+- Keep instructions and skill content aligned with your repository's test stack and CI workflow.
