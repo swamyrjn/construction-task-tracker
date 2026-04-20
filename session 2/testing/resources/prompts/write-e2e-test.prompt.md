@@ -51,3 +51,4 @@ Quality bar:
 - Avoid brittle selectors and timing assumptions.
 - Ensure core flows include both success and resilience/failure validation.
 - Ensure tests are CI-ready (headless, deterministic, and non-interactive).
+- Tests run sequentially (`fullyParallel: false`, `workers: 1`). Do not write tests that assume parallel isolation. Do not set `test.describe.configure({ mode: 'parallel' })` in any spec file.

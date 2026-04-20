@@ -1,7 +1,5 @@
 ---
-appliesTo:
-  - "e2e/**/*.spec.{ts,tsx,js,jsx}"
-  - "playwright.config.{ts,js,mjs,cjs}"
+applyTo: "e2e/**/*.spec.{ts,tsx,js,jsx}"
 ---
 
 # End-to-End Testing Instructions (Language-Level)

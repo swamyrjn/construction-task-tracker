@@ -10,8 +10,7 @@ Use the prompt arguments as the input specification.
 
 Before implementation, consult:
 - `.github/skills/unit-testing/SKILL.md`
-- `.github/instruction/unit-testing.instructions.md`
-- `.github/skills/unit-testing/resource/unit_test_case_checklist.md`
+- `.github/instructions/unit-testing.instructions.md`
 
 Apply repository-specific guidance from these files (fixtures, timing, accessibility, determinism, and quality gates).
 

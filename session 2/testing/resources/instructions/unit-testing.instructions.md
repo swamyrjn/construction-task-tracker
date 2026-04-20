@@ -1,7 +1,5 @@
 ---
-appliesTo:
-  - "src/**/*.{test,spec}.{ts,tsx,js,jsx}"
-  - "src/**/__tests__/**/*.{ts,tsx,js,jsx}"
+applyTo: "src/**/*.{test,spec}.{ts,tsx,js,jsx},src/**/__tests__/**/*.{ts,tsx,js,jsx}"
 ---
 
 # Unit Testing Instructions (Language-Level)
