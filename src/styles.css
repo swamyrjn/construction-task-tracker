@@ -251,6 +251,42 @@ body {
   background: #e8f3fd;
 }
 
+.pill.status-blocked {
+  border-color: #f1ab6f;
+  color: #a95612;
+  background: #fff1e2;
+}
+
+.pill.status-done {
+  border-color: #98d8b1;
+  color: #2f9e56;
+  background: #ecf8f1;
+}
+
+.status-select {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.status-alert {
+  margin-top: 12px;
+  border-radius: 4px;
+  padding: 10px 12px;
+  border: 1px solid;
+}
+
+.status-alert.success {
+  color: #1e7b3e;
+  border-color: #9cd4ae;
+  background: #edfbf2;
+}
+
+.status-alert.error {
+  color: #aa3838;
+  border-color: #e6aaaa;
+  background: #fff0f0;
+}
+
 .primary-button {
   border: 0;
   border-radius: 4px;

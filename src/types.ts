@@ -1,5 +1,7 @@
 export type Priority = 'High' | 'Medium' | 'Low';
-export type Status = 'To Do' | 'In Progress' | 'Completed';
+export type Status = 'To Do' | 'In Progress' | 'Blocked' | 'Done';
+
+export const TASK_STATUSES: Status[] = ['To Do', 'In Progress', 'Blocked', 'Done'];
 
 export type Task = {
   id: number;
